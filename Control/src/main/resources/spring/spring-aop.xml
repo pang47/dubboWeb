@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.0.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd">
+    
+    <!-- <bean id="timerHandler" class="com.util.TimeHandler"></bean> -->
+    
+   <!--  <aop:config>
+    	<aop:aspect id="timer" ref="timerHandler">
+    		第一个*表示返回类型
+    		com.service..*下所有的类，包括子包
+    		第二个*表示所有的方法，(..)不限参数
+    		<aop:pointcut expression="execution(* com.service..*.*(..))" id="addAllMethod"/>
+    		<aop:after method="printTime" pointcut-ref="addAllMethod"/>
+    		<aop:before method="printTime" pointcut-ref="addAllMethod"/>
+    	</aop:aspect>
+    </aop:config> -->
+    <bean id="transactionManager"
+        class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="dataSource"></property>
+    </bean>
+    
+    <tx:advice id="txAdvice" transaction-manager="transactionManager">
+    	<tx:attributes>
+    		<tx:method name="update*"/>
+    		<tx:method name="delete*"/>
+    		<tx:method name="insert*"/>
+    		<tx:method name="remove*"/>
+    		<tx:method name="del*"/>
+    		<tx:method name="add*"/>
+    		<tx:method name="save*"/>
+    		<tx:method name="find*" read-only="true"/>
+    		<tx:method name="get*" read-only="true"/>
+    	</tx:attributes>
+    </tx:advice>
+   			   
+   	<aop:config>
+   		<aop:pointcut expression="execution(* com.service..*.*(..))" id="service"/>
+   		<aop:advisor advice-ref="txAdvice" pointcut-ref="service"/>
+   	</aop:config>
+</beans>

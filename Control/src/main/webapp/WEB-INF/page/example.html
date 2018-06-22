@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Control example</title>
+<script type="text/javascript" src="../js/jquery-1.9.1.min.js"></script>
+<script>
+	$(function(){
+		var o = {
+			url:'http://localhost:8080/Control/test/getAll.do'
+		};
+		decentAjax(o);
+	});
+	var decentAjax = function(options){
+		this.async = true;//默认异步
+		this.callBack = function(){};
+		if(options){
+			if(typeof options=="object"){
+				if(!options.url) return;
+				var _a = options.async?options.async:this.async;
+				$.ajax({
+					type:"POST",
+					url:options.url,
+					//contentType:'application/json',
+					cache:false,//不取缓存
+					async:_a,
+					data:JSON.stringify(options),
+					success:function(data){
+						alert(JSON.stringify(data));
+					},error:function(data){
+						alert(JSON.stringify(data));
+					}
+				});
+			}
+		}
+	}
+</script>
+</head>
+<body>
+	OK
+</body>
+</html>

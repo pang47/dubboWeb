@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration  
+	PUBLIC "-//mybatis.org//DTD Config 3.0//EN"  
+	"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+	<properties resource="config/jdbc.properties"></properties>
+	<settings>  
+        <setting name="logImpl" value="LOG4J" />    
+    </settings>
+	<typeAliases>
+		<!-- 例子 -->
+		<typeAlias type="com.model.TestModel" alias="testModel" />
+	</typeAliases>
+
+	<!-- 这里可以写多个实体的映射文件 -->
+	<mappers>
+		<!-- 例子 -->
+		<mapper resource="config/orm/test-mapping.xml" />
+	</mappers>
+	
+</configuration>

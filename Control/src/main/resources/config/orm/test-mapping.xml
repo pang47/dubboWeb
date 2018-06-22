@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper  
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 通过namespace来找到对应的sql语句 -->
+<mapper namespace="ct.test">
+	<select id="getAll" resultType="java.util.Map">
+		<![CDATA[ 
+			select
+			*
+			from sys_user
+		]]>
+	</select>
+	<!-- es_depot -->
+	<insert id="addSomeOne">
+		<![CDATA[
+			insert 
+			es_depot 
+			(id, name, choose) 
+			values 
+			(#{id}, #{name}, #{choose})
+		]]>
+	</insert>
+</mapper>
