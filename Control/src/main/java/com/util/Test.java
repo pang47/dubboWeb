@@ -1,14 +1,10 @@
 package com.util;
 
-import java.io.File;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.Map;
 
-import com.alibaba.fastjson.JSON;
-import com.util.cache.CacheUtils;
+import com.ylzinfo.cms.sdk.CmsClient;
+
 
 public class Test {
 	
@@ -23,6 +19,8 @@ public class Test {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		
+		CmsClient cmsClient = new CmsClient();
 		
 	}
 	
