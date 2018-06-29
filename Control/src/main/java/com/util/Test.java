@@ -3,7 +3,6 @@ package com.util;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 
-import com.ylzinfo.cms.sdk.CmsClient;
 
 
 public class Test {
@@ -20,7 +19,6 @@ public class Test {
 			e.printStackTrace();
 		}
 		
-		CmsClient cmsClient = new CmsClient();
 		
 	}
 	
