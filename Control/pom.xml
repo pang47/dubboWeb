@@ -217,7 +217,7 @@
 			<build>
 				<plugins>
 					<plugin>
-						<artifactId>maven-antrun-plugins</artifactId>
+						<artifactId>maven-antrun-plugin</artifactId>
 						<groupId>1.8</groupId>
 						<executions>
 							<execution>
