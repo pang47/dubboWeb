@@ -210,4 +210,31 @@
 			</plugin>
 		</plugins>
 	</build>
+	
+	<profiles>
+		<profile>
+			<id>jenkins-server</id>
+			<build>
+				<plugins>
+					<plugin>
+						<artifactId>maven-antrun-plugins</artifactId>
+						<groupId>1.8</groupId>
+						<executions>
+							<execution>
+								<phase>validate</phase>
+								<goals>
+									<goal>run</goal>
+								</goals>
+								<configuration>
+									<target>
+										<copy tofile="${basedir}/src/main/resources/spring/spring-dubbo-provider.xml" file="${basedir}/src/main/resources/spring/spring-dubbo-provider-server.xml" overwrite="true" />
+									</target>
+								</configuration>
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+	</profiles>
 </project>
