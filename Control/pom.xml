@@ -218,7 +218,7 @@
 				<plugins>
 					<plugin>
 						<artifactId>maven-antrun-plugin</artifactId>
-						<groupId>1.8</groupId>
+						<version>1.8</version>
 						<executions>
 							<execution>
 								<phase>validate</phase>
