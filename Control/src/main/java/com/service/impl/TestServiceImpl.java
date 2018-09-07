@@ -1,6 +1,5 @@
 package com.service.impl;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -9,7 +8,6 @@ import org.springframework.stereotype.Service;
 
 import com.alibaba.fastjson.JSONObject;
 import com.service.TestService;
-import com.util.cache.CacheUtils;
 
 @Service
 public class TestServiceImpl extends BaseServiceImpl implements TestService{
