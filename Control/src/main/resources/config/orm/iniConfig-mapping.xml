@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper  
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 通过namespace来找到对应的sql语句 -->
+<mapper namespace="ct.iniConfig">
+	<!-- 映射对象 -->
+	<resultMap type="com.model.IniConfigDTO" id="iniConfig">
+		<result  column="ini_type" property="ini_type"></result>
+		<result  column="ini_type_name" property="ini_type_name"></result>
+		<result  column="ini_class" property="ini_class"></result>
+		<result  column="ini_class_name" property="ini_class_name"></result>
+		<result  column="ini_code" property="ini_code"></result>
+		<result  column="ini_code_value" property="ini_code_value"></result>
+	</resultMap>
+	
+	<select id="getIniConfigByTypeANDClass" resultType="java.util.Map" resultMap="iniConfig">
+		<![CDATA[ 
+			select
+			*
+			from ini_config
+			where ini_type = #{ini_type} and ini_class = #{ini_class}
+		]]>
+	</select>
+</mapper>
