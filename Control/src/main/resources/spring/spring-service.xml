@@ -9,5 +9,6 @@
 	</bean>
 	
    	<bean id="testService" class="com.service.impl.TestServiceImpl" parent="baseService"></bean>
+   	<bean id="INICOFINGSERVICE" class="com.service.impl.IniConfigServiceImpl" parent="baseService"></bean>
  
 </beans>

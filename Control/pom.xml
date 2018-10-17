@@ -62,8 +62,7 @@
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
-			<version>4.11</version>
-			<scope>test</scope>
+			<version>4.10</version>
 		</dependency>
 		<dependency>
 			<groupId>c3p0</groupId>
@@ -229,6 +228,7 @@
 								<configuration>
 									<target>
 										<copy tofile="${basedir}/src/main/resources/spring/spring-dubbo-provider.xml" file="${basedir}/src/main/resources/spring/spring-dubbo-provider-server.xml" overwrite="true" />
+										<copy tofile="${basedir}/src/main/resources/config/log4j.properties" file="${basedir}/src/main/resources/log4j4Web.properties" overwrite="true" />
 									</target>
 								</configuration>
 							</execution>

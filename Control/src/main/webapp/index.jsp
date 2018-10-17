@@ -10,6 +10,7 @@
 				return fun(m,n);
 			}
 		};
+		
 	}
 	
 	var a = fun(0);a.fun(1);a.fun(2);a.fun(3);

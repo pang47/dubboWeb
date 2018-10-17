@@ -17,6 +17,7 @@
 	<mappers>
 		<!-- 例子 -->
 		<mapper resource="config/orm/test-mapping.xml" />
+		<mapper resource="config/orm/iniConfig-mapping.xml" />
 	</mappers>
 	
 </configuration>

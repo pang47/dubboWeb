@@ -9,6 +9,7 @@ import org.apache.log4j.Logger;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.BeanFactory;
 import org.springframework.beans.factory.BeanFactoryAware;
+import org.springframework.beans.factory.NoSuchBeanDefinitionException;
 
 import com.alibaba.fastjson.JSONObject;
 import com.service.CommonService;
@@ -58,6 +59,10 @@ public class CommonServiceImpl implements CommonService, BeanFactoryAware{
 		} catch (InvocationTargetException e) {
 			rtnJson.put("retCode", "-1");
 			rtnJson.put("message", e.getMessage());
+			e.printStackTrace();
+		} catch (NoSuchBeanDefinitionException e){
+			rtnJson.put("retCode", "-1");
+			rtnJson.put("message", "没对应接口信息!");
 			e.printStackTrace();
 		}catch (Exception e) {
 			rtnJson.put("retCode", "-1");
